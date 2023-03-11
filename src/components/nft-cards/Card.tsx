@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 // Types
 import { NFT } from '../../features/types/NFT';
 // Utils
@@ -10,6 +10,9 @@ import styles from './Card.module.css';
 type CardProps = NFT & { onClick(): void };
 
 const Card: FC<CardProps> = function (props) {
+  const priceExists = useMemo(() => !!props.price, [props.price]);
+  const volumeExists = useMemo(() => !!props.volume, [props.volume]);
+
   return (
     <article className={styles.card} onClick={props.onClick}>
       <figure>
@@ -27,12 +30,19 @@ const Card: FC<CardProps> = function (props) {
         <li>
           <small>Volume</small>
           <span className={styles.separator}></span>
-          <small>{props.volume}ETH</small>
+
+          <small>
+            {volumeExists
+              ? props.volume!.toString().concat(' ETH')
+              : 'None yet'}{' '}
+          </small>
         </li>
         <li>
           <small>Price</small>
           <span className={styles.separator}></span>
-          <small>${props.price}</small>
+          <small>
+            {priceExists ? '$'.concat(props.price!.toString()) : 'None yet'}{' '}
+          </small>
         </li>
         <li>
           <small>Last updated</small>
