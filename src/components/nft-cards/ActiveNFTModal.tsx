@@ -23,6 +23,8 @@ const ActiveNFTModal: React.FC<Props> = function (props) {
 
   const nftDetails: React.ReactNode = useMemo(() => {
     if (!props.show) return <></>;
+    const priceExists = !!props.activeNFT?.price;
+
     return (
       <div className={cls(styles.modalContent, 'd-flex gap-5 mb-5')}>
         <figure>
@@ -31,10 +33,19 @@ const ActiveNFTModal: React.FC<Props> = function (props) {
         <ul className={cls(styles.nftFullDetails, 'list-unstyled')}>
           <li>
             <label>Price:</label>{' '}
-            <span className="fs-1 color-white">${props.activeNFT!.price}</span>
+            <span className={cls('color-white', priceExists && 'fs-1')}>
+              {!!priceExists
+                ? '$'.concat(props.activeNFT!.price!.toString())
+                : '-'}
+            </span>
           </li>
           <li>
-            <label>Volume:</label> <span>{props.activeNFT!.volume} ETH</span>
+            <label>Volume:</label>{' '}
+            <span>
+              {props.activeNFT?.volume
+                ? props.activeNFT.volume.toString().concat(' ETH')
+                : '-'}{' '}
+            </span>
           </li>
           <li>
             <label>Creator's name</label>{' '}
@@ -47,7 +58,7 @@ const ActiveNFTModal: React.FC<Props> = function (props) {
         </ul>
       </div>
     );
-  }, [props.activeNFT]);
+  }, [props.activeNFT, props.show]);
 
   if (!props.show) return <></>;
 

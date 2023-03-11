@@ -32,8 +32,8 @@ const items: NFT[] = [
     about:
       'You met her in the company. She is always with you, but her thoughts are floating somewhere. Portrait of a girl dreaming of living in space and traveling outside of time and space',
     ownedBy: 'ZaicevaZaiceva',
-    volume: 0.0012,
-    price: 1.77,
+    volume: null,
+    price: null,
     category: 'Future Dreamers',
     url: 'https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/689177133487227165456947801518141525305277241627074241277552455734653878273',
     img: 'future-dreams.jpg',

@@ -3,8 +3,8 @@ export interface NFT {
   category: string;
   about: string;
   ownedBy: string;
-  volume: number;
-  price: number;
+  volume: number | null;
+  price: number | null;
   url: string;
   img: string;
   lastUpdated: string;
