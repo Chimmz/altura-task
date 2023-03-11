@@ -1,0 +1,93 @@
+.card {
+  display: grid;
+  grid-template-rows: 17rem 4rem auto;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: 'SEE MORE';
+  position: absolute;
+  top: 75%;
+  right: 0;
+  color: #fff;
+  opacity: 0;
+  transition: transform 0.3s 0.3s, opacity 0.2s 0.3s;
+  z-index: 5;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem !important;
+  border-radius: 50%;
+  background-color: #252525;
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.2s;
+  z-index: 4;
+}
+
+.card:hover::before {
+  opacity: 1;
+  transform: translateX(-2rem);
+}
+.card:hover::after {
+  opacity: 1;
+  transform: scale(5);
+}
+
+.card img {
+  width: 30rem;
+  height: 17rem;
+  object-fit: cover;
+}
+
+.card > header {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(90.45deg, #9e9800 14.92%, #e33700 102.8%);
+  text-align: center;
+  color: #fff;
+  font-family: 'Josefin Sans', 'sans-serif';
+  transform: translateY(-50%);
+  width: 80%;
+  max-width: 80%;
+  /* height: fit-content !important; */
+  height: 5rem;
+  justify-self: center;
+  /* padding: 3px; */
+}
+
+.card > header h4 {
+  font-size: 2.2rem;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card > .details li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.card > .details li > .separator {
+  position: relative;
+  flex: 1;
+}
+
+.card > .details li > .separator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.2px;
+  width: 100%;
+  background-color: #c9c9c9;
+}

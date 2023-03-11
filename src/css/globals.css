@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media screen and (max-width: 56.25em) {
+  html {
+    font-size: 58.5%;
+  }
+}
+
+body {
+  font-family: 'Lato', 'sans-serif';
+  min-height: 100vh;
+  font-size: 1.7rem !important;
+  color: #777;
+}

@@ -1,0 +1,52 @@
+.modalContent {
+  color: #9b9b9b;
+  padding-inline: 3rem;
+}
+
+.nftFullDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nftFullDetails li > label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+.nftFullDetails li > *:nth-child(2) {
+  color: #e0e0e0;
+}
+
+.modalHeading {
+  font-size: 4rem !important;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.modalHeading::first-letter {
+  color: #db6a1a;
+}
+.modalHeading + button {
+  color: gray !important;
+}
+
+@media screen and (max-width: 480px) {
+  .modalContent {
+    flex-direction: column;
+  }
+}
+
+.modalContent figure {
+  width: 23rem;
+  /* height: 18rem; */
+  border-radius: 5px;
+  overflow: hidden;
+  /* border: 1px solid gray; */
+}
+.modalContent figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  /* object-fit: ; */
+}

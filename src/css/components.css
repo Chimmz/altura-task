@@ -1,0 +1,14 @@
+/* Buttons */
+.btn-pry {
+  background-color: #db6a1a;
+  color: #fff !important;
+  font-size: 1.5rem;
+  padding: 0.5em 1.2em;
+}
+.btn-pry:hover {
+  background-color: #d48246;
+}
+
+.btn-close {
+  color: white !important;
+}
